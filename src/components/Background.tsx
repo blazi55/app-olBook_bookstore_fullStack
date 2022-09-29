@@ -6,6 +6,9 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button, Paper } from '@mui/material';
 import { AnyARecord } from 'dns';
+import { useNavigate } from 'react-router-dom';
+import { BookView } from './BookView';
+import { PersonView } from './PersonView';
 
 interface BackgroundProps {
 
@@ -14,6 +17,7 @@ interface BackgroundProps {
 export const Background : FC<BackgroundProps> = (props: BackgroundProps) => {
     const[persons, setPersons] = useState([]);
     const[books, setBooks] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("http://localhost:8080/personQuery/all", {
@@ -75,17 +79,30 @@ export const Background : FC<BackgroundProps> = (props: BackgroundProps) => {
         console.log(response)
         setBooks(response);
         console.log(response)
-      };
-    
+    };
+
+    const onAnotherPagePerson = () => {
+        navigate("/secondPage");
+    }
+
+    const onAnotherPageBook = () => {
+        navigate("/thirdPage");
+    }
 
     return (
         <>
             <div className="head">
-                <button className="first_button" onClick={onSortAlphabet}>
+                <button className="first_button" onClick={onSortPriceDesc}>
                     Sortuj książki od najwiekszej ceny
                 </button>
-                <button className="first_button" onClick={onSortPriceDesc}>
+                <button className="first_button" onClick={onSortAlphabet}>
                     Sortuj książki alfabetycznie
+                </button>
+                <button className="first_button" onClick={onAnotherPagePerson}>
+                    Stwórz swojego klienta
+                </button>
+                <button className="first_button" onClick={onAnotherPageBook}>
+                    Stwórz swoją książke
                 </button>
             </div>
             <div className="background">
@@ -98,7 +115,7 @@ export const Background : FC<BackgroundProps> = (props: BackgroundProps) => {
                 <div className="secondColumn">
                         Książki:
                         {books.map(book => (
-                        <Book book={book}/>
+                        <BookView book={book}/>
                     ))}
                 </div>
             </div>
