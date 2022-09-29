@@ -1,8 +1,6 @@
 import { TextField } from "@mui/material";
 import { FC, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Background } from "./Background";
-import { Person } from "./Person";
+import { useNavigate } from "react-router-dom";
 import { PersonView } from "./PersonView";
 
 

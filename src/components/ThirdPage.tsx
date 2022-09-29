@@ -1,10 +1,7 @@
 import { TextField } from "@mui/material";
 import { FC, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Background } from "./Background";
+import { useNavigate } from "react-router-dom";
 import { Book } from "./Book";
-import { BookView } from "./BookView";
-import { Person } from "./Person";
 
 
 interface ThirdPageProps {

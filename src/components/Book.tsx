@@ -45,11 +45,15 @@ export const Book : FC<BookProps> = (props: BookProps) => {
             </div>
             <div className="block_under_book">
                 Zmień dane książki:
-                <TextField id="outlined-basic" label="Nowa nazwa" variant="outlined" value={name} onChange={(e: any) => setBookName(e.target.value)}
-                 style={textStyle} />
-                <TextField id="outlined-basic" label="Nowa cena" variant="outlined" value={price} onChange={(e: any) => setBookPrice(e.target.value)} 
-                 style={textStyle}/>
-                <button className="first_button" onClick={onSave}> Zapisz </button>
+                <ul>
+                    <TextField id="outlined-basic" label="Nowa nazwa" variant="outlined" value={name} onChange={(e: any) => setBookName(e.target.value)}
+                    style={textStyle} />
+                 </ul>
+                 <ul>
+                    <TextField id="outlined-basic" label="Nowa cena" variant="outlined" value={price} onChange={(e: any) => setBookPrice(e.target.value)} 
+                    style={textStyle}/>
+                 </ul>
+                <button className="second_button" onClick={onSave}> Zapisz </button>
             </div>
         </div>
     )

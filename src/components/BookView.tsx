@@ -9,7 +9,7 @@ interface BookViewProps {
 export const BookView : FC<BookViewProps> = (props: BookViewProps) => {
 
     return (
-        <div className="book">
+        <div className="book_view">
             <div className="block_in_book">
                 <ul>Nazwa Książki: {props.book.name}</ul>
                 <ul>Cena: {props.book.price} zł</ul>
