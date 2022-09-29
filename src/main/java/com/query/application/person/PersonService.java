@@ -30,22 +30,20 @@ public class PersonService {
         return person;
     }
 
-    public Person updatePersonBook(String nameBook, String firstName, String lastName) {
-        Book book = bookRepository.findByName(nameBook).orElseThrow(IllegalArgumentException::new);
-        Person person = personRepository.findByFirstNameAndLastName(firstName, lastName).orElseThrow(IllegalArgumentException::new);
-        List<Book> listNewBooks = new ArrayList<>();
-        listNewBooks.add(book);
-
-        for (Book singleBook : person.getBooks()) {
-            listNewBooks.add(singleBook);
-        }
-
-        person.setBooks(listNewBooks);
+    public Person updatePerson(CreatePersonDto createPersonDto, Long id) {
+        Person person = personRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        person.setFirstName(createPersonDto.getFirstName());
+        person.setLastName(createPersonDto.getLastName());
+        person.setAge(createPersonDto.getAge());
         personRepository.save(person);
         return person;
     }
 
     public List<Person> getAll() {
         return personRepositoryInImpl.getAllPerson();
+    }
+
+    public List<Person> checkAge(Integer age) {
+        return personRepositoryInImpl.checkAge(age);
     }
 }

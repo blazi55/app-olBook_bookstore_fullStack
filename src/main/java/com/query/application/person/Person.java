@@ -1,10 +1,7 @@
 package com.query.application.person;
 
 import com.query.application.book.Book;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -22,12 +19,15 @@ public class Person {
     private Long id;
 
     @Column
+    @NonNull
     private String firstName;
 
     @Column
+    @NonNull
     private String lastName;
 
     @Column
+    @NonNull
     private Integer age;
 
     @OneToMany(mappedBy = "person")

@@ -20,4 +20,14 @@ public class PersonRepositoryInImpl implements PersonRepositoryIn {
                 .orderBy(qperson.firstName.asc())
                 .fetch();
     }
+
+    @Override
+    public List<Person> checkAge(Integer age) {
+        JPAQuery<Person> jpaQuery = new JPAQuery<>(em);
+        QPerson qperson = QPerson.person;
+        return jpaQuery.from(qperson)
+                .where(qperson.age.between(age, 100))
+                .orderBy(qperson.firstName.desc())
+                .fetch();
+    }
 }

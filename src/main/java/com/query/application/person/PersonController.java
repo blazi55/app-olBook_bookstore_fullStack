@@ -20,13 +20,17 @@ public class PersonController {
     }
 
     @PutMapping("/update")
-    public Person updatePersonBooks(@RequestParam String nameBook, @RequestParam String firstName,
-                                    @RequestParam String lastName) {
-        return personService.updatePersonBook(nameBook, firstName, lastName);
+    public Person updatePerson(@RequestBody CreatePersonDto createPersonDto, @RequestParam Long id) {
+        return personService.updatePerson(createPersonDto, id);
     }
 
     @GetMapping("/all")
     public List<Person> getAllPersons() {
         return personService.getAll();
+    }
+
+    @GetMapping("/checkAge")
+    public List<Person> checkAge(@RequestParam Integer age) {
+        return personService.checkAge(age);
     }
 }
