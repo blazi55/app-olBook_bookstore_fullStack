@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping("personQuery")
 @RequiredArgsConstructor
@@ -32,5 +33,20 @@ public class PersonController {
     @GetMapping("/checkAge")
     public List<Person> checkAge(@RequestParam Integer age) {
         return personService.checkAge(age);
+    }
+
+    @GetMapping("/countFirstName")
+    public List<Long> countFirstName() {
+        return personService.countFirstName();
+    }
+
+    @GetMapping("/sortFirstNameAndLastName")
+    public List<Person> sortFirstNameAndLastName() {
+        return personService.sortFirstNameAndLastName();
+    }
+
+    @GetMapping("/getFullNameWithAge")
+    public Map<Long, String> getFullNameWithAge() {
+        return personService.getFullNameWithAge();
     }
 }

@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -45,5 +46,17 @@ public class PersonService {
 
     public List<Person> checkAge(Integer age) {
         return personRepositoryInImpl.checkAge(age);
+    }
+
+    public List<Long> countFirstName() {
+        return personRepositoryInImpl.countFirstName();
+    }
+
+    public Map<Long, String> getFullNameWithAge() {
+        return personRepositoryInImpl.getFullNameWithAge();
+    }
+
+    public List<Person> sortFirstNameAndLastName() {
+        return personRepositoryInImpl.sortFirstNameAndLastName();
     }
 }
