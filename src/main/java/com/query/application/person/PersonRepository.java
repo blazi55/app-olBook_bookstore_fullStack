@@ -1,7 +1,5 @@
 package com.query.application.person;
 
-import com.query.application.book.Book;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

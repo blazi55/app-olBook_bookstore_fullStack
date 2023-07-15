@@ -1,7 +1,5 @@
 package com.query.application.book;
 
-import com.query.application.person.Person;
-import com.query.application.person.QPerson;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.stereotype.Repository;
 
