@@ -1,8 +1,8 @@
-import { FC, useEffect, useState } from 'react';
+import {FC, useEffect, useState} from 'react';
 import './App.css';
-import { Person } from './Person';
-import { useNavigate } from 'react-router-dom';
-import { BookView } from './BookView';
+import {Person} from './Person';
+import {useNavigate} from 'react-router-dom';
+import {BookView} from './BookView';
 
 
 interface SecondPageProps {

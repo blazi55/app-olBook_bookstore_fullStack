@@ -1,6 +1,5 @@
-import { FC, useState } from "react";
+import {FC} from "react";
 import './App.css';
-
 
 interface BookViewProps {
     book: any

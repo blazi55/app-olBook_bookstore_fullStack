@@ -2,7 +2,6 @@ import { TextField } from "@mui/material";
 import { FC, useState } from "react";
 import './App.css';
 
-
 interface PersonViewProps {
     person: any
 }
